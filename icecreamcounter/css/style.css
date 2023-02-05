@@ -1,6 +1,8 @@
 :root{
-    --black-shade:#1E2022;
+    --black-shade:#252424;
     --blue-shade:#3D84A8;
+    --babypink:#FCEAFF;
+    --white:white;
 }
 *,::after,::before{
     margin: 0;
@@ -21,6 +23,7 @@ img{
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
+    background-color:var(--white) !important;
 }
 /*padding left right mobile*/
 .padding-lr-mobile-twenty{
@@ -34,41 +37,35 @@ body{
 }
 .ice-container{
     width: 100%;
-    background-color: white;
+    
 }
 .ice-section{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width:100%;
+    width: 100%;
+    padding-top: 30px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    row-gap: 20px;
+    row-gap: 10px;
 }
 .ice-heading-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    width:100%;
+    margin-bottom: 30px;
 }
 .heading{
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 30px;
     text-align: center;
+    text-shadow: 6px 3px  3px rgb(57, 158, 184);
     text-transform: capitalize;
     letter-spacing: 2px;
     word-spacing: 2px;
-    color: var(--black-shade);
+    color:crimson;
 }
 .ice-img-container{
-    width: 100%;
-    height: 100%;
-    
+    aspect-ratio: 450/300;
+    overflow: hidden;
 }
 .ice-img-component{
-    aspect-ratio: 350/300;
-    overflow: hidden;
     box-shadow: 0px 0px 40px white;
     border-radius: 3%;
 }
@@ -81,6 +78,7 @@ body{
 }
 .ice-img-component{
     animation: ice-cream 2s  linear infinite alternate;
+    transform: scale(0.6);
 }
 @keyframes ice-cream {
     0%{
@@ -88,13 +86,12 @@ body{
         transition: all .3s linear;
     }
     100%{
-        transform: translateY(1px) scale(0.9);
+        transform: translateY(1px) scale(0.8);
         transition: all .3s linear;
     }
 }
 .ice-counter .counter{
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 35px;
     text-align: center;
     text-transform: capitalize;
     letter-spacing: 2px;
@@ -118,49 +115,60 @@ body{
 }
 .ice-counter-button .counter-buttton{
     padding: 5px 8px 5px 8px;
-    border: 1px black solid;
+    border: 5px black double;
     background-color: white;
     font-size: 20px;
-    font-weight: bold;
     text-align: center;
     text-transform: capitalize;
     word-spacing: 2px;
     letter-spacing: 2px;
     color: var(--black-shade);
+    border-radius: 4px;
+}
+.counter-buttton:active{
+    transform: scale(0.9);
+    transition: transform .3s linear;
 }
 .counter-buttton:hover{
     background-color:var(--blue-shade) ;
     color: white;
-    border: none;
-    transition: all .3s linear;
+    transition: all .3s ease-in-out;
 
 }
 @media screen  and (min-width:750px){
     .ice-img-component{
-        aspect-ratio: 900/500;
+        aspect-ratio: 900/400;
     }
 }
 @media screen and (min-width:992px) {
     .ice-section{
-        margin-top: 60px;
-        margin-bottom: 60px;
-        row-gap: 10px;
+        row-gap: 8px;
+        margin-bottom: 40px;
     }
     .heading{
-        font-size: 50px;
+        font-size: 35px;
+    }
+    .ice-img-container {
+        width:500px;
+        height: 310px;
+        overflow: hidden;
     }
     .ice-img-component{
-        aspect-ratio: 1080/500;
+        width:100%;
+        height: 100%;
+        padding: 0px;
+        overflow: hidden;
     }
     .ice-counter .counter{
         font-size: 80px;
     }
     .ice-counter-button{
         margin-top: 30px;
-        column-gap: 20px;
+        column-gap: 30px;
+        justify-self: baseline;
     }
     .ice-counter-button .counter-buttton{
-        padding: 10px 15px 10px 15px;
-        font-size: 30px;
+        padding: 10px  15px;
+        font-size: 20px;
     }
 }

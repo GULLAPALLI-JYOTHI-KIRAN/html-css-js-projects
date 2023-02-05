@@ -1,7 +1,10 @@
 :root{
     --light-blue:#2d87c8;
-    --light-black:#102a42;
+    --light-red:#e71710;
     --light-smoke:#617d98;
+}
+html{
+    font-size: 16px;
 }
 *{
     transform: translateY(10px);
@@ -11,6 +14,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transform: translateY(0px);
 }
 ul{
     list-style-type: none;
@@ -36,17 +40,17 @@ body{
 }
 .question-container{
     width:100%;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 .question-center{
     width:100%;
-    margin-top: 50px;
 }
 .question-sub-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 50px;
+    flex-wrap: wrap;
+    row-gap: 30px;
 }
 .question-section-heading{
     width: 100%;
@@ -54,72 +58,94 @@ body{
 .heading{
     text-align: center;
     text-transform: capitalize;
-    font-size: 35px;
+    line-height: 1.2;
+    font-size:1.198rem;
     color:var(--light-blue) ;
 }
 .question-section-container{
     width:100%;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 20px;
-}
-.question-section{
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 10px;
-    border-radius: 5px 5px 5px 5px;
-    box-shadow: 0px 0px 20px var(--light-black);
-    background-color: white;
+}
+.question-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    position: relative;
+    top:0px;
+    left: 0px;
 }
 .question-component{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgb(85, 84, 84);
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
 }
 .question{
-    color: var(--light-black);
-    font-size: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    line-height: 30px;
-}
-button{
-    border: 0px;
+    color: black;
+    font-size: 0.89rem;
+    line-height: 1.2;
 }
 .fa-angle-down{
-    color: var(--light-blue);
-    background-color: white;
+    color: var(--light-red);
+}
+.c{
+    transform:rotate(180deg);
+    cursor: pointer;
 }
 .fa-angle-down:hover{
-    color: var(--light-black);
+    color: black;
 }
 .question-desc-container{
-    border-top: 3px var(--light-smoke) dotted;
+    background-color: white;
+    height: 0px;
     display: none;
-    
 }
 .question-desc{
-    margin-top: 10px;
-    font-size: 16px;
+    font-size: 1.06rem;
+    text-align:justify;
+    line-height: 1.5;
+    word-spacing: 0px!important;
     color: var(--light-smoke);
-    margin-bottom: 30px;
+    display: none;
+}
+@keyframes move {
+    0%{
+        height: -10px;
+    }
+    25%{
+        height: 35px;
+    }
+    50%{
+        height: 75px;
+    }
+    75%{
+        height: 95px;
+    }
+    100%{
+        height: 130px;
+    }
 }
 @media screen and (min-width:750px) {
     .section-wraper{
-        max-width: 800px;
+        max-width: 620px;
         margin-left: auto;
         margin-right: auto;
     }
+    .question-container{
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
     .question-sub-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        row-gap: 50px;
     }
     .question-section-heading .heading{
         font-size: 50px;
@@ -134,21 +160,31 @@ button{
         align-items: center;
     }
     .question-section-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        row-gap: 30px;
     }
     .question-section{
         display: flex;
-        justify-content: center;
-        align-items: center;
     }
     .question-desc-container{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 30px;
-        display: none;
+    }
+    @keyframes move {
+        0%{
+            height: -10px;
+        }
+        25%{
+            height: 35px;
+        }
+        50%{
+            height: 75px;
+        }
+        75%{
+            height: 95px;
+        }
+        100%{
+            height: 110px;
+        }
     }
 }

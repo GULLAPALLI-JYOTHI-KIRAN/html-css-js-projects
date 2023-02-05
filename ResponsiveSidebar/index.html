@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>responsive sidebar</title>
+    <title>Responsive Sidebar</title>
+    <link rel="shortcut icon" href="./icons/hambuger.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body >
-    <div class="side-nav-container">
-        <div class="side-nav-section margin-desktop-right-thirty">
-            <div class="hambuger">
+    <div class="side-nav-container ">
+        <div class="side-nav-section wraper margin-desktop-right-thirty">
+            <div class="hambuger  wraper">
                 <a href="#">
-                    <img src="./icons/hambuger.svg" alt="hambuger"></a>
+                    <img src="./icons/hambuger.svg" alt="hambuger" title="open">
+                </a>
             </div>
             <!--side bar section start-->
             <aside class="sidebar-section-container">
-        <div class="sidebar-section-center ">
+        <div class="sidebar-section-center">
             <div class="sidebar-section">
                 <!--logo-name-section start-->
                 <div class="logo-name-section">
                     <h2 class="name">rk groups</h2>
-                    <a href="#"><img src="./icons/closebutton.svg" alt="closebutton"></a>
+                    <a href="#" id="closeButton"><img src="./icons/closebutton.svg" alt="closebutton" title="close"></a>
                 </div>
                 <!--logo-name-section end-->
                 <!--sidebar-img-container section start-->
@@ -59,6 +61,6 @@
     <!--side bar section  end-->
         </div>
     </div>
-    
+    <script src="./js/app.js"></script>
 </body>
 </html>
